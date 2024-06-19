@@ -1,5 +1,4 @@
 package util;
-
 public class ClaseUtil {
     public String coloresRGB(int n){
         String rojo = "\033[31m";
@@ -28,6 +27,38 @@ public class ClaseUtil {
                 return "Entrada no válida";
         }  
     }
+    public void fraseRGB(){
+        try {
+            String frase = "Cualquier Huevada";
+            char[] vectorChar = frase.toCharArray();
+            int longitud = vectorChar.length -1;
+            int[] numeroAsociado = new int[longitud];
+            int nota = 5;
+            for(int i = 0; i < longitud; i ++){
+                numeroAsociado[i] = nota;
+                if(nota == 0){
+                    nota = 5;
+                }
+                nota --;
+            }
+            nota = 5;
+            System.out.print("\n");
+            for(int i = 0; i < 6; i++){
+                for(int j = 0; j <= longitud; j++){
+                    System.out.print(coloresRGB(numeroAsociado[nota-i])+vectorChar[j]);
+                    Thread.sleep(7);
+                }
+                System.out.print("\r");
+                if(i == 5){
+                    i = 0;
+                }
+            }
+            System.out.print("\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void palabraRGB(){
         System.out.print("\n");
         for(int i = 0; i < 6; i++){
@@ -43,6 +74,7 @@ public class ClaseUtil {
             }
         }
     }
+
     public String colores(int n){
         String negro = "\033[30m";
         String rojo = "\033[31m";
