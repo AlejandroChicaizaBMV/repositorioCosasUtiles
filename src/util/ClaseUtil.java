@@ -27,11 +27,11 @@ public class ClaseUtil {
                 return "Entrada no válida";
         }  
     }
-    public void fraseRGB(){
+    public void fraseAnimadaRGB(){
         try {
-            String frase = "Cualquier Huevada";
+            String frase = "te amo mucho Dariangel <3";
             char[] vectorChar = frase.toCharArray();
-            int longitud = vectorChar.length -1;
+            int longitud = vectorChar.length -1 ;
             int[] numeroAsociado = new int[longitud];
             int nota = 5;
             for(int i = 0; i < longitud; i ++){
@@ -46,7 +46,43 @@ public class ClaseUtil {
             for(int i = 0; i < 6; i++){
                 for(int j = 0; j <= longitud; j++){
                     System.out.print(coloresRGB(numeroAsociado[nota-i])+vectorChar[j]);
-                    Thread.sleep(7);
+                    Thread.sleep(5);
+                }
+                System.out.print("\r");
+                if(i == 5){
+                    i = 0;
+                }
+            }
+            System.out.print("\n");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public void fraseAnimadaRGB1(){
+        try {
+            String frase = "te amo mucho Dariangel <3";
+            char[] vectorChar = frase.toCharArray();
+            int longitud = vectorChar.length;
+            int[] numeroAsociado = new int[longitud];
+            int nota = 5;
+            for(int i = 0; i < longitud; i ++){
+                numeroAsociado[i] = nota;
+                if(nota == 0){
+                    nota = 5;
+                }
+                nota --;
+            }
+            nota = 5;
+            System.out.print("\n");
+            int variablecolor = 0;
+            for(int i = 0; i < 6; i++){
+                for(int j = 0; j < longitud; j++){
+                    System.out.print(coloresRGB(variablecolor)+vectorChar[j]);
+                    Thread.sleep(5);
+                    variablecolor++;
+                    if(variablecolor==6){
+                        variablecolor = 0;
+                    }
                 }
                 System.out.print("\r");
                 if(i == 5){
