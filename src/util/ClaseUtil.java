@@ -1,15 +1,16 @@
 package util;
 public class ClaseUtil {
-    public String negro = "\033[30m";
-    public String rojo = "\033[31m";
-    public String verde = "\033[32m";
-    public String amarillo = "\033[33m";
-    public String azul = "\033[34m";
-    public String magenta = "\033[35m";
-    public String cian = "\033[36m";
-    public String blanco = "\033[37m";
-    public String reset = "\u001B[0m";
-    public String coloresRGB(int n){
+    private static String negro = "\033[30m";
+    private static String rojo = "\033[31m";
+    private static String verde = "\033[32m";
+    private static String amarillo = "\033[33m";
+    private static String azul = "\033[34m";
+    private static String magenta = "\033[35m";
+    private static String cian = "\033[36m";
+    private static String blanco = "\033[37m";
+    private static String reset = "\u001B[0m";
+    
+    private static String coloresRGB(int n){
         switch (n) {
             case 0:
                 return rojo;
@@ -29,9 +30,34 @@ public class ClaseUtil {
                 return "Entrada no válida";
         }  
     }
-    public void fraseAnimadaRGB(){
+
+    private static String colores(int n){
+        switch (n) {
+            case 0:
+                return rojo;
+            case 1:
+                return amarillo;
+            case 2:
+                return verde;
+            case 3:
+                return cian;
+            case 4:
+                return azul;
+            case 5:
+                return magenta;
+            case 6:
+                return negro;
+            case 7:
+                return blanco;
+            case 8:
+                return reset;
+            default:
+                return "Entrada no válida";
+        }        
+    }
+
+    public static void fraseAnimadaRGB(String frase){
         try {
-            String frase = "te amo mucho Dariangel <3";
             char[] vectorChar = frase.toCharArray();
             int longitud = vectorChar.length -1 ;
             int[] numeroAsociado = new int[longitud];
@@ -60,9 +86,8 @@ public class ClaseUtil {
             e.printStackTrace();
         }
     }
-    public void fraseAnimadaRGB1(){
+    public static void fraseAnimadaRGB1(String frase){
         try {
-            String frase = "te amo mucho Dariangel <3";
             char[] vectorChar = frase.toCharArray();
             int longitud = vectorChar.length;
             int[] numeroAsociado = new int[longitud];
@@ -111,30 +136,5 @@ public class ClaseUtil {
                 e.printStackTrace();
             }
         }
-    }
-
-    public String colores(int n){
-        switch (n) {
-            case 0:
-                return rojo;
-            case 1:
-                return amarillo;
-            case 2:
-                return verde;
-            case 3:
-                return cian;
-            case 4:
-                return azul;
-            case 5:
-                return magenta;
-            case 6:
-                return negro;
-            case 7:
-                return blanco;
-            case 8:
-                return reset;
-            default:
-                return "Entrada no válida";
-        }        
     }
 }
