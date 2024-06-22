@@ -1,13 +1,15 @@
 package util;
 public class ClaseUtil {
+    public String negro = "\033[30m";
+    public String rojo = "\033[31m";
+    public String verde = "\033[32m";
+    public String amarillo = "\033[33m";
+    public String azul = "\033[34m";
+    public String magenta = "\033[35m";
+    public String cian = "\033[36m";
+    public String blanco = "\033[37m";
+    public String reset = "\u001B[0m";
     public String coloresRGB(int n){
-        String rojo = "\033[31m";
-        String verde = "\033[32m";
-        String amarillo = "\033[33m";
-        String azul = "\033[34m";
-        String magenta = "\033[35m";
-        String cian = "\033[36m";
-        String reset = "\u001B[0m";
         switch (n) {
             case 0:
                 return rojo;
@@ -112,15 +114,6 @@ public class ClaseUtil {
     }
 
     public String colores(int n){
-        String negro = "\033[30m";
-        String rojo = "\033[31m";
-        String verde = "\033[32m";
-        String amarillo = "\033[33m";
-        String azul = "\033[34m";
-        String magenta = "\033[35m";
-        String cian = "\033[36m";
-        String blanco = "\033[37m";
-        String reset = "\u001B[0m";
         switch (n) {
             case 0:
                 return rojo;
