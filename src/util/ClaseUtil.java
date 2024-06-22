@@ -57,69 +57,44 @@ public class ClaseUtil {
     }
 
     public static void fraseAnimadaRGB(String frase){
-        try {
-            char[] vectorChar = frase.toCharArray();
-            int longitud = vectorChar.length -1 ;
-            int[] numeroAsociado = new int[longitud];
-            int nota = 5;
-            for(int i = 0; i < longitud; i ++){
-                numeroAsociado[i] = nota;
-                if(nota == 0){
-                    nota = 5;
-                }
-                nota --;
-            }
-            nota = 5;
-            System.out.print("\n");
-            for(int i = 0; i < 6; i++){
-                for(int j = 0; j <= longitud; j++){
-                    System.out.print(coloresRGB(numeroAsociado[nota-i])+vectorChar[j]);
-                    Thread.sleep(5);
-                }
-                System.out.print("\r");
-                if(i == 5){
-                    i = 0;
+        char[] vectorChar = frase.toCharArray();
+        int longitud = vectorChar.length -1 ;
+        int colorNumero = 0;
+        do{
+            for(int i = 0; i <= longitud; i++){
+                System.out.print(coloresRGB(colorNumero)+vectorChar[i]);
+                try {
+                    Thread.sleep(7);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-            System.out.print("\n");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            System.out.print("\r");
+            colorNumero ++;
+            if(colorNumero == 6)
+                colorNumero = 0; 
+        }while(colorNumero < 7);
+        System.out.print("\n");
     }
     public static void fraseAnimadaRGB1(String frase){
-        try {
-            char[] vectorChar = frase.toCharArray();
-            int longitud = vectorChar.length;
-            int[] numeroAsociado = new int[longitud];
-            int nota = 5;
-            for(int i = 0; i < longitud; i ++){
-                numeroAsociado[i] = nota;
-                if(nota == 0){
-                    nota = 5;
-                }
-                nota --;
-            }
-            nota = 5;
-            System.out.print("\n");
-            int variablecolor = 0;
-            for(int i = 0; i < 6; i++){
-                for(int j = 0; j < longitud; j++){
-                    System.out.print(coloresRGB(variablecolor)+vectorChar[j]);
-                    Thread.sleep(5);
-                    variablecolor++;
-                    if(variablecolor==6){
-                        variablecolor = 0;
-                    }
-                }
-                System.out.print("\r");
-                if(i == 5){
-                    i = 0;
+        char[] vectorChar = frase.toCharArray();
+        int longitud = vectorChar.length -1 ;
+        int colorNumero = 0;
+        do{
+            for(int i = 0; i <= longitud; i++){
+                System.out.print(coloresRGB(colorNumero)+vectorChar[i]);
+                colorNumero ++;
+                if(colorNumero == 6)
+                    colorNumero = 0; 
+                try {
+                    Thread.sleep(7);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
                 }
             }
-            System.out.print("\n");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            System.out.print("\r");
+        }while(colorNumero < 7);
+        System.out.print("\n");
     }
 
     public void palabraRGB(){
